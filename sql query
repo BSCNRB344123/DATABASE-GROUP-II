@@ -1,0 +1,46 @@
+Code to insert new customer
+INSERT INTO Customer (customer ID, name, contact)
+VALUES (1, 'John Doe', 'johndoe@email.com');
+
+insert new sales order for a customer:
+INSERT INTO Sales Order (order ID, date, customer ID)
+VALUES (101, '2023-10-25', 1);
+
+Add a new product to the product table:
+INSERT INTO Product (product ID, name, price)
+VALUES (1001, 'Widget A', 19.99);
+
+Record inventory for a product
+INSERT INTO Inventory (inventory ID, supplier ID, product ID, quantity)
+VALUES (501, 1, 1001, 100);
+Updating data:
+
+Retrieve all sales orders for a specific product
+SELECT * FROM Sales Order
+WHERE customer ID = 1;
+
+SELECT Supplier.name, Supplier.contact
+FROM Product
+JOIN Inventory ON Product.product ID = Inventory.product ID
+JOIN Supplier ON Inventory.supplier ID = Supplier.supplier ID
+WHERE Product.product ID = 1;
+
+
+Updating data:
+
+UPDATE Customer
+SET contact = 'newemail@email.com'
+WHERE customer ID = 1;
+
+Modify price of product:
+UPDATE Product
+SET price = 24.99
+WHERE product ID = 1001;
+
+Deleting data:
+DELETE FROM Reservation
+WHERE reservation ID = 2;
+
+Removal of loyalty program from customer:
+DELETE FROM Reservation
+WHERE reservation ID = 201
