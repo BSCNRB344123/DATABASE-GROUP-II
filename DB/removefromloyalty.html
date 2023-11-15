@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Customer Contact</title>
+    <title>Remove Loyalty Program</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,37 +19,44 @@
         form {
             background-color: #fff;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
         }
 
         label {
             display: block;
             margin-bottom: 8px;
-            font-weight: bold;
         }
 
         input {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
+            padding: 10px;
+            margin-bottom: 15px;
             box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
         }
 
         input[type="submit"] {
-            background-color: #4caf50;
-            color: #fff;
-            cursor: pointer;
-            padding: 10px;
+            background-color: #e74c3c;
+            color: #ffffff;
+            padding: 10px 15px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #c0392b;
+        }
+
+        p {
+            margin-top: 15px;
+            color: #27ae60;
+        }
+
+        .error {
+            color: #e74c3c;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -61,36 +68,28 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $customerID = $_POST["customerID"];
-    $newContact = $_POST["newContact"];
 
-    // Perform the SQL update here
-    $sql = "UPDATE Customer
-            SET contact = '$newContact'
-            WHERE customerID = '$customerID'";
-
+    // Perform the SQL deletion here
+    $sql = "DELETE FROM LoyaltyProgram WHERE customerID = '$customerID'";
     // Execute the SQL query using your preferred database connection method
 
     // Check if the SQL operation was successful
     if ($success) {
-        // Redirect to the success page
-        header("Location: your_success_page.php");
-        exit();
+        // Display a success message
+        echo "Loyalty program removed successfully!";
     } else {
-        // If there was an error, you might want to handle it or redirect to an error page
+        // If there was an error, display an error message
         echo "Error executing SQL query.";
     }
 }
 ?>
 
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <label for="customerID">Customer ID:</label>
-        <input type="text" name="customerID" required><br>
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <label for="customerID">Customer ID:</label>
+    <input type="text" name="customerID" required>
 
-        <label for="newContact">New Contact:</label>
-        <input type="text" name="newContact" required><br>
-
-        <input type="submit" value="Update Customer Contact">
-    </form>
+    <input type="submit" value="Remove Loyalty Program">
+</form>
 
 </body>
 </html>

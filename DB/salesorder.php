@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insert New Customer</title>
+    <title>Insert Sales Order</title>
 </head>
 <body>
     <form action="insert_customer.php" method="post">
-        <label for="customerID">Customer ID:</label>
+        <label for="customerID">Order ID:</label>
         <input type="text" name="customerID" required><br>
 
-        <label for="name">Name:</label>
-        <input type="text" name="name" required><br>
+        <label for="name">Date:</label>
+        <input type="text" name="Date" required><br>
 
-        <label for="contact">Contact:</label>
+        <label for="customerID">customerID:</label>
         <input type="text" name="contact" required><br>
 
-        <input type="submit" value="Insert Customer">
+        <input type="submit" value="Insert sales order">
     </form>
     <?php
 // Include your database connection code here if not already included

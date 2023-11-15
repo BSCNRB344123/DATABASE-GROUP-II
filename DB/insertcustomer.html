@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert New Customer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $customerID = $_POST["customerID"];
+    $name = $_POST["name"];
+    $contact = $_POST["contact"];
+
+    // Perform the SQL insertion here
+    $sql = "INSERT INTO Customer (customerID, name, contact) VALUES ('$customerID', '$name', '$contact')";
+    // Execute the SQL query using your preferred database connection method
+
+    // Redirect back to the form or a success page
+    header("Location: your_success_page.php");
+    exit();
+}
+?>
+
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <label for="customerID">Customer ID:</label>
+        <input type="text" name="customerID" required>
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+
+        <label for="contact">Contact:</label>
+        <input type="text" name="contact" required>
+
+        <input type="submit" value="Insert Customer">
+    </form>
+
+</body>
+</html>

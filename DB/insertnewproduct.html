@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Customer Contact</title>
+    <title>Add New Product</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,37 +19,34 @@
         form {
             background-color: #fff;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
         }
 
         label {
             display: block;
             margin-bottom: 8px;
-            font-weight: bold;
         }
 
         input {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
+            padding: 10px;
+            margin-bottom: 15px;
             box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
         }
 
         input[type="submit"] {
-            background-color: #4caf50;
-            color: #fff;
-            cursor: pointer;
-            padding: 10px;
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px 15px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #2980b9;
         }
     </style>
 </head>
@@ -60,14 +57,12 @@
 // For example, you might have a separate file with the database connection code
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $customerID = $_POST["customerID"];
-    $newContact = $_POST["newContact"];
+    $productID = $_POST["productID"];
+    $productName = $_POST["productName"];
+    $productPrice = $_POST["productPrice"];
 
-    // Perform the SQL update here
-    $sql = "UPDATE Customer
-            SET contact = '$newContact'
-            WHERE customerID = '$customerID'";
-
+    // Perform the SQL insertion here
+    $sql = "INSERT INTO Product (productID, name, price) VALUES ('$productID', '$productName', '$productPrice')";
     // Execute the SQL query using your preferred database connection method
 
     // Check if the SQL operation was successful
@@ -83,13 +78,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <label for="customerID">Customer ID:</label>
-        <input type="text" name="customerID" required><br>
+        <label for="productID">Product ID:</label>
+        <input type="text" name="productID" required>
 
-        <label for="newContact">New Contact:</label>
-        <input type="text" name="newContact" required><br>
+        <label for="productName">Product Name:</label>
+        <input type="text" name="productName" required>
 
-        <input type="submit" value="Update Customer Contact">
+        <label for="productPrice">Product Price:</label>
+        <input type="text" name="productPrice" required>
+
+        <input type="submit" value="Add Product">
     </form>
 
 </body>

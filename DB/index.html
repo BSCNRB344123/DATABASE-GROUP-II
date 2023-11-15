@@ -4,17 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Updated to column layout */
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
- <a href="insertcustomer.php"><button>insert customer</button><a/> 
- <a href="insertnewproduct.php"><button>insert new product</button><a/>    
-   <a href="insertinvetory.php"><button>insert inventory</button>   
-   <a href="retrieveallsales.php"><button>Retrieve all sales orders</button>   
-   <a href="selectsupplier.php"><button>Select Supplier</button>   
-   <a href="upatecustomercontact.php"><button>Updating data</button>   
-  <a href="modifyproductprice.php"> <button>Modify price of product</button>   
-   <a href="insertcustomer.php"><button>Deleting data</button>   
-   <a href="removefromloyalty.php"><button>Removal of customer from loyalty program</button>   
-     
+
+    <h1>Business conglomerate database management system/ group 2 spu</h1><br>
+
+    <a href="insertcustomer.php"><button>Insert Customer</button></a>
+    <a href="insertnewproduct.php"><button>Insert New Product</button></a>
+    <a href="insertinventory.php"><button>Insert Inventory</button></a>
+    <a href="retrieveallsales.php"><button>Retrieve All Sales Orders</button></a>
+    <a href="selectsupplier.php"><button>Select Supplier</button></a>
+    <a href="updatecustomercontact.php"><button>Updating Data</button></a>
+    <a href="modifyproductprice.php"><button>Modify Price of Product</button></a>
+    <a href="deletingdata.php"><button>Deleting Data</button></a>
+    <a href="removefromloyalty.php"><button>Removal of Customer from Loyalty Program</button></a>
+
 </body>
 </html>

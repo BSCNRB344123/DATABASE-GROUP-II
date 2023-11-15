@@ -20,7 +20,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Redirect back to the form or a success page
     header("Location: your_success_page.php");
     exit();
+
+
 }
+
+// Database connection
+    $conn = new mysqli('localhost','root','','classasignment');
+    if($conn->connect_error){
+        echo "$conn->connect_error";
+        die("Connection Failed : ". $conn->connect_error);
+    } else {
+        $stmt = $conn->prepare("insert into registration(firstName, lastName, gender, email, password, number) values(?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssi",  $customerID, $name, $contact);
+        $execval = $stmt->execute();
+        echo $execval;
+        echo "Registration successfully...";
+        $stmt->close();
+        $conn->close();
+    }
+
 ?>
 
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
