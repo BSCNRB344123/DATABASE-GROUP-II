@@ -63,28 +63,8 @@
 <body>
 
 <?php
-// Include your database connection code here if not already included
-// For example, you might have a separate file with the database connection code
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $productID = $_POST["productID"];
-    $newPrice = $_POST["newPrice"];
-
-    // Perform the SQL update here
-    $sql = "UPDATE Product SET price = '$newPrice' WHERE productID = '$productID'";
-    // Execute the SQL query using your preferred database connection method
-
-    // Check if the SQL operation was successful
-    if ($success) {
-        // Display a success message
-        echo "Product price updated successfully!";
-    } else {
-        // If there was an error, display an error message
-        echo "Error executing SQL query.";
-    }
-}
+require('modifyproductprice.php');
 ?>
-
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <label for="productID">Product ID:</label>
     <input type="text" name="productID" required>
