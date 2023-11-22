@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insert Sales Order</title>
-</head>
-<body>
-    <form action="insert_customer.php" method="post">
-        <label for="customerID">Order ID:</label>
-        <input type="text" name="customerID" required><br>
 
-        <label for="name">Date:</label>
-        <input type="text" name="Date" required><br>
-
-        <label for="customerID">customerID:</label>
-        <input type="text" name="contact" required><br>
-
-        <input type="submit" value="Insert sales order">
-    </form>
     <?php
 // Include your database connection code here if not already included
 // For example, you might have a separate file with the database connection code
@@ -44,5 +25,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
     
-</body>
-</html>
+
