@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insert New Customer</title>
-</head>
-<body>
+
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -40,19 +33,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 ?>
-
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <label for="customerID">Customer ID:</label>
-        <input type="text" name="customerID" required><br>
-
-        <label for="name">Name:</label>
-        <input type="text" name="name" required><br>
-
-        <label for="contact">Contact:</label>
-        <input type="text" name="contact" required><br>
-
-        <input type="submit" value="Insert Customer">
-    </form>
-
-</body>
-</html>
