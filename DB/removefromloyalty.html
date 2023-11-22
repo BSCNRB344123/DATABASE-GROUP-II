@@ -63,25 +63,7 @@
 <body>
 
 <?php
-// Include your database connection code here if not already included
-// For example, you might have a separate file with the database connection code
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $customerID = $_POST["customerID"];
-
-    // Perform the SQL deletion here
-    $sql = "DELETE FROM LoyaltyProgram WHERE customerID = '$customerID'";
-    // Execute the SQL query using your preferred database connection method
-
-    // Check if the SQL operation was successful
-    if ($success) {
-        // Display a success message
-        echo "Loyalty program removed successfully!";
-    } else {
-        // If there was an error, display an error message
-        echo "Error executing SQL query.";
-    }
-}
+require('removefromloyalty.php');
 ?>
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
