@@ -23,19 +23,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <label for="inventoryID">Inventory ID:</label>
-        <input type="text" name="inventoryID" required><br>
-
-        <label for="supplierID">Supplier ID:</label>
-        <input type="text" name="supplierID" required><br>
-
-        <label for="productID">Product ID:</label>
-        <input type="text" name="productID" required><br>
-
-        <label for="quantity">Quantity:</label>
-        <input type="text" name="quantity" required><br>
-
-        <input type="submit" value="Record Inventory">
-    </form>
