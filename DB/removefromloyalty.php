@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remove Loyalty Program</title>
-</head>
-<body>
 
 <?php
 // Include your database connection code here if not already included
@@ -29,12 +21,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-    <label for="customerID">Customer ID:</label>
-    <input type="text" name="customerID" required><br>
-
-    <input type="submit" value="Remove Loyalty Program">
-</form>
-
-</body>
-</html>
