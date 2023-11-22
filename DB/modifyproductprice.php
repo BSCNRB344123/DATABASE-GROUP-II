@@ -30,15 +30,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-    <label for="productID">Product ID:</label>
-    <input type="text" name="productID" required><br>
-
-    <label for="newPrice">New Price:</label>
-    <input type="text" name="newPrice" required><br>
-
-    <input type="submit" value="Modify Product Price">
-</form>
-
-</body>
-</html>
