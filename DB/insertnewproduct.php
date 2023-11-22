@@ -23,24 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <label for="productID">Product ID:</label>
-        <input type="text" name="productID" required><br>
-
-        <label for="productName">Product Name:</label>
-        <input type="text" name="productName" required><br>
-
-        <label for="productPrice">Product Price:</label>
-        <input type="text" name="productPrice" required><br>
-
-        <input type="submit" value="Add Product">
-    </form>
-
-</body>
-</html>
-This code is similar to the previous examples. It creates an HTML form for adding a new product, and the PHP code processes the form data, executes the SQL insertion, and redirects to a success page if the operation is successful.
-
-Make sure to customize the form fields and SQL query according to your database structure and requirements.
 
 
 
